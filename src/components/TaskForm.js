@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./TaskForm.css";
 
-const TaskForm = ({ addTask }) => {
+const TaskForm = ({ addTask, sortTasks }) => {
   const [level, setLevel] = useState("Easy");
 
   const submitHandler = (event) => {
@@ -63,6 +63,10 @@ const TaskForm = ({ addTask }) => {
           <button className="form-submit-btn" type="submit">
             Submit
           </button>
+
+          <button className="form-submit-btn" onClick={()=>{
+            sortTasks();
+          }}>Sort Tasks</button>
         </form>
       </div>
     </div>

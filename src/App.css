@@ -22,6 +22,6 @@ body{
   padding: 0;
 
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Adjust width as needed */
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Adjust width as needed */
   gap: 20px; /* Adjust gap between cards */
 }
