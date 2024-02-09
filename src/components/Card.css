@@ -1,0 +1,295 @@
+:root {
+    --primary-color: #6dd70a; /* Define your variable */
+    --btn-color: rgb(215, 75, 73);
+    --font-size-big: 17px;
+    --font-size-small: 14px;
+  }
+
+.card p {
+    font-size: var(--font-size-big);
+    font-weight: 400;
+    line-height: 20px;
+    color: #666;
+  }
+  
+  .card p.small {
+    font-size: var(--font-size-small);
+  }
+  
+  .go-corner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    overflow: hidden;
+    top: 0;
+    right: 0;
+    background-color: var(--primary-color);
+    border-radius: 0 4px 0 32px;
+  }
+  
+  .go-arrow {
+    margin-top: -4px;
+    margin-right: -4px;
+    color: white;
+    font-family: courier, sans;
+  }
+  
+  .card1 {
+    display: block;
+    position: relative;
+    max-width: 262px;
+    background-color: #f2f8f9;
+    border-radius: 4px;
+    padding: 32px 24px;
+    margin: 12px;
+    text-decoration: none;
+    z-index: 0;
+    overflow: hidden;
+  }
+  
+  .card1:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: -16px;
+    right: -16px;
+    background: var(--primary-color);
+    height: 32px;
+    width: 32px;
+    border-radius: 32px;
+    transform: scale(1);
+    transform-origin: 50% 50%;
+    transition: transform 0.25s ease-out;
+  }
+  
+  .card1:hover:before {
+    transform: scale(25);
+  }
+  
+  .card1:hover p {
+    transition: all 0.3s ease-out;
+    color: rgba(255, 255, 255, 0.8);
+  }
+  
+  .card1:hover h3 {
+    transition: all 0.3s ease-out;
+    color: #fff;
+  }
+
+  /* Checkbox */
+  .check {
+    cursor: pointer;
+    position: relative;
+    margin: auto;
+    width: 18px;
+    height: 18px;
+    -webkit-tap-highlight-color: transparent;
+    transform: translate3d(0, 0, 0);
+  }
+  
+  .check:before {
+    content: "";
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(34, 50, 84, 0.03);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+  }
+  
+  .check svg {
+    position: relative;
+    z-index: 1;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke: #c8ccd4;
+    stroke-width: 1.5;
+    transform: translate3d(0, 0, 0);
+    transition: all 0.2s ease;
+  }
+  
+  .check svg path {
+    stroke-dasharray: 60;
+    stroke-dashoffset: 0;
+  }
+  
+  .check svg polyline {
+    stroke-dasharray: 22;
+    stroke-dashoffset: 66;
+  }
+  
+  .check:hover:before {
+    opacity: 1;
+  }
+  
+  .check:hover svg {
+    stroke: var(--accent-color, #a3e583);
+  }
+  
+  [id^="cbx"]:checked + .check svg {
+    stroke: var(--accent-color, #a3e583);
+  }
+  
+  [id^="cbx"]:checked + .check svg path {
+    stroke-dashoffset: 60;
+    transition: all 0.3s linear;
+  }
+  
+  [id^="cbx"]:checked + .check svg polyline {
+    stroke-dashoffset: 42;
+    transition: all 0.2s linear;
+    transition-delay: 0.15s;
+  }
+
+  /* Buttons */
+  .btn-group{
+    display: flex;
+  }
+  .Btn {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 2rem;
+    height: 2rem;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition-duration: .3s;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
+    background-color: var(--btn-color);
+    margin-right: 0.7rem;
+  }
+  /* green-rgb(80, 160, 78) */
+  /* yello rgb(215, 208, 73) */
+  /* red - rgb(215, 75, 73) */
+  /* plus sign */
+  .sign {
+    width: 100%;
+    transition-duration: .3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .sign svg {
+    width: 1.2rem;
+  }
+  
+  .sign svg path {
+    fill: white;
+  }
+  /* text */
+  .text {
+    position: absolute;
+    right: 0%;
+    width: 0%;
+    opacity: 0;
+    color: white;
+    font-size: 0.7rem;
+    font-weight: 400;
+    transition-duration: .3s;
+  }
+  /* hover effect on button width */
+  .Btn:hover {
+    width: 125px;
+    border-radius: 40px;
+    transition-duration: .3s;
+  }
+  
+  .Btn:hover .sign {
+    width: 30%;
+    transition-duration: .3s;
+    padding-left: 20px;
+  }
+  /* hover effect button's text */
+  .Btn:hover .text {
+    opacity: 1;
+    width: 70%;
+    transition-duration: .3s;
+    padding-right: 10px;
+  }
+  /* button click effect*/
+  .Btn:active {
+    transform: translate(2px ,2px);
+  }
+
+  /* Radio Button */
+  .container{
+    width: fit-content;
+    height: fit-content;
+  }
+  .tabs {
+    display: flex;
+    position: relative;
+    background-color: #fff;
+    box-shadow: 0 0 1px 0 rgba(24, 94, 224, 0.45), 0 6px 12px 0 rgba(24, 94, 224, 0.15);
+    padding: 2px;
+    border-radius: 1.5rem;
+  }
+  
+  .tabs * {
+    z-index: 2;
+  }
+  
+  .container input[type="radio"] {
+    display: none;
+  }
+  
+  .tab {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20px;
+    width: 50px;
+    font-size: .7rem;
+    color: black;
+    font-weight: 300;
+    border-radius: 1.5rem;
+    cursor: pointer;
+    transition: color 0.15s ease-in;
+  }
+  
+  .container input[type="radio"]:checked + label {
+    color: #185ee0;
+  }
+
+  
+  [id^="radio-1"]:checked ~ .glider {
+    transform: translateX(0);
+  }
+  
+  [id^="radio-2"]:checked ~ .glider {
+    transform: translateX(100%);
+  }
+  
+  [id^="radio-3"]:checked ~ .glider {
+    transform: translateX(200%);
+  }
+  
+  .glider {
+    position: absolute;
+    display: flex;
+    height: 20px;
+    width: 50px;
+    background-color: #e6eef9;
+    z-index: 1;
+    border-radius: 1.5rem;
+    transition: 0.25s ease-out;
+  }
+  
+  @media (max-width: 700px) {
+   
+    .tabs {
+      transform: scale(0.6);
+    }
+  }
+  
