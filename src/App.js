@@ -31,20 +31,12 @@ function App() {
 
   const sortTasks = () => {
     const sortedTasks = [...tasks].sort((task1, task2) => {
-      // Compare completed status
       if (task1.isCompleted !== task2.isCompleted) {
-        return task1.isCompleted === "true" ? -1 : 1; // Completed tasks first
+        return task1.isCompleted === "true" ? -1 : 1;
       }
   
-      // Compare task levels
       const levelOrder = { "Easy": 1, "Medium": 2, "Hard": 3 };
-      const levelComparison = levelOrder[task1.level] - levelOrder[task2.level];
-      if (levelComparison !== 0) {
-        return levelComparison; // Sort by level priority
-      }
-  
-      // If both tasks have the same completed status and level, maintain their original order
-      return 0;
+      return levelOrder[task1.level] - levelOrder[task2.level];
     });
   
     setTasks(sortedTasks);

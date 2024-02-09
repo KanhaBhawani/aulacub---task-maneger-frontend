@@ -11,7 +11,7 @@ const TaskForm = ({ addTask, sortTasks }) => {
       name: event.target.elements["task-name"].value,
       desc: event.target.elements["text-description"].value,
       level: level,
-      isCompleted:'false',
+      isCompleted: "false",
     };
 
     addTask(task);
@@ -63,11 +63,15 @@ const TaskForm = ({ addTask, sortTasks }) => {
           <button className="form-submit-btn" type="submit">
             Submit
           </button>
-
-          <button className="form-submit-btn" onClick={()=>{
-            sortTasks();
-          }}>Sort Tasks</button>
         </form>
+        <button
+          className="form-submit-btn"
+          onClick={() => {
+            sortTasks();
+          }}
+        >
+          Sort Tasks
+        </button>
       </div>
     </div>
   );
